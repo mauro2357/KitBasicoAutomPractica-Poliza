@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sura.polizas.bean.RespuestaBean;
 
 @RestController
-@RequestMapping("/api/polizas")
+@RequestMapping("/api/poliza")
 public class PolizasController {
 
 	
