@@ -28,7 +28,7 @@ public class PolizasController {
 	 
 	 
 	 @PostMapping("/valida")
-	 public RespuestaValidaBean crearAfiliado(
+	 public RespuestaValidaBean validaPoliza(
 			 	@RequestParam("idPoliza") String idPoliza,
 	    		@RequestParam("tipoNumeroAsegurado") String tipoNumeroAsegurado,
 	    		@RequestParam("placa") String placa) {
