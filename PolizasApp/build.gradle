@@ -45,20 +45,20 @@ targetCompatibility = 1.8
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-    // tag::actuator[]
+    
     compile("org.springframework.boot:spring-boot-starter-actuator")
-    // end::actuator[]
-    // tag::tests[]
+    
     testCompile("org.springframework.boot:spring-boot-starter-test")
     // end::tests[]
+    
     compile('mysql:mysql-connector-java:6.0.5')
-    // https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    
 	compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.0.CR2'
-	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa
+	
 	compile group: 'org.springframework.data', name: 'spring-data-jpa', version: '2.0.6.RELEASE'
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa
+	
 compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.0.1.RELEASE'
-	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+	
 compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.0.1.RELEASE'
 	
     
