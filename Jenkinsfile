@@ -22,6 +22,29 @@
 			}
 
 
+			stage('Versionar'){
+				steps {
+					script{
+						// Obtain an Artifactory server instance, defined in Jenkins --> Manage:
+						def server = Artifactory.server 'Jenkins-Local'
+
+						def uploadSpec = """{
+						  "files": [
+							{
+							  "pattern": "*.jar",
+							  "target": "kit-basico-poliza"
+							}
+						 ]
+						}"""
+						def buildInfo2=server.upload(uploadSpec)
+						
+						server.publishBuildInfo buildInfo2
+		
+					}
+				}
+			}
+
+
 			stage('Desplegar Pruebas') { 
 				steps { 
 				
