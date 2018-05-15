@@ -2,6 +2,7 @@
 
 	pipeline {
 		agent any
+
 		triggers { pollSCM('* * * * *') }
 
 
@@ -20,7 +21,7 @@
 				}
 			}
 
-		}
+		
 
 		post {
 			failure {
