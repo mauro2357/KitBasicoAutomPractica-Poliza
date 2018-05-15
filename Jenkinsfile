@@ -39,12 +39,11 @@
 			      }
 					bat 'mkdir "PolizasApp/build/libs/config"'
 					bat 'xcopy "KitBasicoAutomPractica-Poliza-Ops/config" "PolizasApp/build/libs/config"'
-					bat "deploy-bd.bat"
 					bat "deploy-app.bat"
 				}
 			}
 
-			
+
 		}
 		
 
