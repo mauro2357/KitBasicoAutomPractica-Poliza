@@ -20,6 +20,31 @@
 					bat "deploy-app.bat"
 				}
 			}
+
+
+			stage('Desplegar Pruebas') { 
+				steps { 
+				
+					script{	
+					
+					input "Desea desplegar a pruebas?"
+					
+						checkout([$class: 'GitSCM', 
+						branches: [[name: '*/master']], 
+						doGenerateSubmoduleConfigurations: false, 
+						extensions: [[$class: 'RelativeTargetDirectory', 
+							relativeTargetDir: 'KitBasicoAutomPractica-Poliza-Ops']], 
+						submoduleCfg: [], 
+						userRemoteConfigs: [[url: 'https://github.com/mauro2357/KitBasicoAutomPractica-Poliza-Ops.git']]])     
+			      }
+					bat 'mkdir "PolizasApp/build/libs/config"'
+					bat 'xcopy "KitBasicoAutomPractica-Poliza-Ops/config" "PolizasApp/build/libs/config"'
+					bat "deploy-bd.bat"
+					bat "deploy-app.bat"
+				}
+			}
+
+			
 		}
 		
 
