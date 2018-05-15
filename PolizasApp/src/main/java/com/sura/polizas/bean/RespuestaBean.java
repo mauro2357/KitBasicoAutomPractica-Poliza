@@ -4,6 +4,8 @@ public class RespuestaBean {
 
 	private boolean financiado;
 	private Long valorPoliza;
+
+	
 	public boolean isFinanciado() {
 		return financiado;
 	}
@@ -16,7 +18,6 @@ public class RespuestaBean {
 	public void setValorPoliza(Long valorPoliza) {
 		this.valorPoliza = valorPoliza;
 	}
-	
 	
 	
 }
