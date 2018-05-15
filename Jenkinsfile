@@ -2,9 +2,9 @@
 
 	pipeline {
 		agent any
-
 		triggers { pollSCM('* * * * *') }
 
+		stages{
 
 			stage('Generar desplegable') {
 				steps {
@@ -20,7 +20,7 @@
 					bat "deploy-app.bat"
 				}
 			}
-
+		}
 		
 
 		post {
