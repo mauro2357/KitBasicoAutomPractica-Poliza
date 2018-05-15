@@ -32,7 +32,7 @@
 						  "files": [
 							{
 							  "pattern": "*.jar",
-							  "target": "kit-basico-poliza"
+							  "target": "kit-basico-repository"
 							}
 						 ]
 						}"""
