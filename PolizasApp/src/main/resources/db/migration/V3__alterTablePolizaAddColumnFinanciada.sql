@@ -1,0 +1,1 @@
+alter table poliza add column FINANCIADA CHAR(1)
