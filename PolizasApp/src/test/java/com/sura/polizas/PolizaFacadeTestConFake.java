@@ -15,18 +15,27 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.sura.polizas.bean.RespuestaBean;
+import com.sura.polizas.configuration.ApplicationTestConfiguration;
 import com.sura.polizas.entidades.Poliza;
+import com.sura.polizas.facade.IAseguradoFacade;
 import com.sura.polizas.facade.IPolizaFacade;
+import com.sura.polizas.facade.IVehiculoFacade;
 import com.sura.polizas.facade.PolizaFacade;
 
 @ActiveProfiles("test")
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes= {PolizaRepositoryFake.class, PolizaFacade.class})
+@SpringBootTest(classes= {PolizaRepositoryFake.class, ApplicationTestConfiguration.class, PolizaFacade.class})
 public class PolizaFacadeTestConFake {
 
 	
 	@Autowired
 	IPolizaFacade polizaFacade;
+	
+	@Autowired
+	IAseguradoFacade aseguradoFacade;
+	
+	@Autowired
+	IVehiculoFacade vehiculoFacade;	
 	
 	@Test
 	public void datosFinanciadoValorPolizaValida() {
@@ -46,15 +55,6 @@ public class PolizaFacadeTestConFake {
 		respuestaBean.setFinanciado(true);
 		respuestaBean.setValorPoliza(new BigDecimal(1000));
 		assertTrue("Poliza no encontrada", respuestaBean!=null);
-	}
-	
-	public void validaVehiculoOK() {
-		
-	}
-	
-	
-	public void validaVehiculoNoOK() {
-		
 	}
 	
 }
