@@ -14,7 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.sura.polizas.bean.RespuestaBean;
 import com.sura.polizas.configuration.ApplicationTestConfiguration;
 import com.sura.polizas.entidades.Poliza;
 import com.sura.polizas.facade.IAseguradoFacade;
@@ -49,12 +48,19 @@ public class PolizaFacadeTestConFake {
 		assertFalse("Poliza no encontrada", poliza==null);
 	}
 	
+
 	@Test
-	public void datosRespuesta() {
-		RespuestaBean respuestaBean= new RespuestaBean();
-		respuestaBean.setFinanciado(true);
-		respuestaBean.setValorPoliza(new BigDecimal(1000));
-		assertTrue("Poliza no encontrada", respuestaBean!=null);
+	public void validarPoliza() {
+		Poliza poliza= new Poliza();
+		poliza.setIdPoliza(1L);
+		poliza.setEmpresa("SURA");
+		poliza.setTipoPoliza(1);
+		poliza.setValorPoliza(new BigDecimal(1000));
+		poliza.setZona("LIMA");
+		
+		assertTrue("Datos correctamente seteados", poliza!=null);
 	}
+	
+
 	
 }

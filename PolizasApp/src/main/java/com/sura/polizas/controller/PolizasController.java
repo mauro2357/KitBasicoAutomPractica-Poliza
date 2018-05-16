@@ -45,7 +45,9 @@ public class PolizasController {
 			@RequestParam("numeroDocumento") String numeroDocumento,
 			@RequestParam("placa") String placa) {
 
-		RespuestaValidaBean respuestaValidaBean = iPolizaFacade.validaPedido(new Long(idPoliza), tipoDocumento, numeroDocumento, placa) ;
+		RespuestaValidaBean respuestaValidaBean = new RespuestaValidaBean(); 
+		respuestaValidaBean=iPolizaFacade.validaPedido(new Long(idPoliza), tipoDocumento, numeroDocumento, placa) ;
+		
 		return respuestaValidaBean;
 
 	}
