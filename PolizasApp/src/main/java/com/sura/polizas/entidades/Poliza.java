@@ -60,7 +60,7 @@ public class Poliza {
 	public void setValorPoliza(BigDecimal valorPoliza) {
 		this.valorPoliza = valorPoliza;
 	}
-<<<<<<< .merge_file_72UtuN
+
 
 	public String getFinanciada() {
 		return financiada;
@@ -69,7 +69,7 @@ public class Poliza {
 	public void setFinanciada(String financiada) {
 		this.financiada = financiada;
 	}
-=======
+
 	
 	//Devuelve boolean si es asegurable
 	public void validaPedido(String idPoliza, String tipoDocumento, String numeroDocumento, String placa) {
@@ -96,6 +96,6 @@ public class Poliza {
 	}
 	
 	
->>>>>>> .merge_file_TvkCuH
+
 	
 }
