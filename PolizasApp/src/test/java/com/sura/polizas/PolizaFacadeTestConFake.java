@@ -48,6 +48,18 @@ public class PolizaFacadeTestConFake {
 		assertTrue("Poliza no encontrada", respuestaBean!=null);
 	}
 	
+	@Test
+	public void validarPoliza() {
+		Poliza poliza= new Poliza();
+		poliza.setIdPoliza(1L);
+		poliza.setEmpresa("SURA");
+		poliza.setTipoPoliza(1);
+		poliza.setValorPoliza(new BigDecimal(1000));
+		poliza.setZona("LIMA");
+		
+		assertTrue("Datos correctamente seteados", poliza!=null);
+	}
+	
 	public void validaVehiculoOK() {
 		
 	}

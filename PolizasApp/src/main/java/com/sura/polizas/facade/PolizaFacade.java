@@ -27,7 +27,7 @@ public class PolizaFacade implements IPolizaFacade {
 			return RespuestaValidaBean.buildNoFinanciado("No existe la poliza con el id " + id);
 
 		RestTemplate restTemplate = new RestTemplate();
-		if (poliza.getTipoPoliza() == TipoPoliza.COLECTIVO.codigo) {
+		if (poliza.getTipoPoliza() == TipoPoliza.COLECTIVO.getCodigo()) {
 			Asegurado asegurado = new Asegurado(tipoDocumento, numeroDocumento, String.valueOf(id));
 			ResponseEntity<RespuestaValidaBean> rpta = restTemplate.postForEntity(
 					"http://172.16.0.123:6666/api/asegurado/valida", asegurado, RespuestaValidaBean.class);
@@ -35,7 +35,7 @@ public class PolizaFacade implements IPolizaFacade {
 			if (!respuesta.isAsegurable())
 				return RespuestaValidaBean.buildNoFinanciado("El duenio del vehiculo no es empleado de la empresa");
 
-		} else if (poliza.getTipoPoliza() == TipoPoliza.INDIVIDUAL.codigo) {
+		} else if (poliza.getTipoPoliza() == TipoPoliza.INDIVIDUAL.getCodigo()) {
 			ResponseEntity<String> rpta = restTemplate
 					.getForEntity("http://172.16.0.123:8585/api/vehiculo/zona/" + placa, String.class);
 			String respuesta = "";
