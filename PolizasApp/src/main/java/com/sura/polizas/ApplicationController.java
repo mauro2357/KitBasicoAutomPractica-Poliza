@@ -14,8 +14,7 @@ public class ApplicationController {
 	 ConfigurableApplicationContext applicationContext;
 	 
 	 @GetMapping("/shutdown")
-	 public void shutdown() {
-		 System.out.println("Shutdown"+applicationContext);
+	 public void shutdown() {		
 		 applicationContext.close();
 	 }
 	
