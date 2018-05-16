@@ -1,0 +1,2 @@
+cd PolizasApp
+gradlew sonarqube
