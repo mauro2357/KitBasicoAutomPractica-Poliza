@@ -5,11 +5,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import com.sura.polizas.bean.Asegurado;
 import com.sura.polizas.bean.RespuestaValidaBean;
 import com.sura.polizas.datos.PolizasRepository;
-import com.sura.polizas.entidades.Asegurado;
 import com.sura.polizas.entidades.Poliza;
-import com.sura.polizas.entidades.TIPO_POLIZA;
+import com.sura.polizas.entidades.TipoPoliza;
 
 @Component
 public class PolizaFacade implements IPolizaFacade{
@@ -27,13 +27,13 @@ public class PolizaFacade implements IPolizaFacade{
 		if(poliza==null) return RespuestaValidaBean.buildNoFinanciado("No existe la poliza con el id "+id) ;
 
 		RestTemplate restTemplate = new RestTemplate();
-		if(poliza.getTipoPoliza()==TIPO_POLIZA.COLECTIVO.codigo) {
+		if(poliza.getTipoPoliza()==TipoPoliza.COLECTIVO.codigo) {
 			Asegurado asegurado = new Asegurado(tipoDocumento, numeroDocumento, new Long(id).toString());
 			ResponseEntity<RespuestaValidaBean> rpta = restTemplate.postForEntity("http://172.16.0.123:6666/api/asegurado/valida", asegurado, RespuestaValidaBean.class);
 			RespuestaValidaBean respuesta = rpta.getBody();
 			if(!respuesta.isAsegurable()) return RespuestaValidaBean.buildNoFinanciado("El duenio del vehiculo no es empleado de la empresa") ;
 			
-		}else if(poliza.getTipoPoliza()==TIPO_POLIZA.INDIVIDUAL.codigo) {
+		}else if(poliza.getTipoPoliza()==TipoPoliza.INDIVIDUAL.codigo) {
 			ResponseEntity<String> rpta = restTemplate.getForEntity("http://172.16.0.123:8585/api/vehiculo/zona/"+placa, String.class);
 			String respuesta = rpta.getBody();
 			if(respuesta==null || !respuesta.equals(poliza.getZona()) ) return RespuestaValidaBean.buildNoFinanciado("La zona del vehiculo no aplica para la poliza") ;

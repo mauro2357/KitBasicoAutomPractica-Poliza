@@ -7,7 +7,7 @@ package com.sura.polizas.entidades;
  * @author 
  *
  */
-public enum TIPO_POLIZA {
+public enum TipoPoliza {
 	
 	INDIVIDUAL(1,"Poliza individual") , 
 	COLECTIVO (2,"Poliza Colectiva");
@@ -15,7 +15,7 @@ public enum TIPO_POLIZA {
 	public int codigo ;
 	public String descripcion ;
 	
-	TIPO_POLIZA(int codigo, String descripcion) {
+	TipoPoliza(int codigo, String descripcion) {
 		this.codigo = codigo;
 		this.descripcion = descripcion;		
 	}

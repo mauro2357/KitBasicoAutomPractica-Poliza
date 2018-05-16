@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sura.polizas.entidades;
+package com.sura.polizas.bean;
 
 /**
  * @author 
