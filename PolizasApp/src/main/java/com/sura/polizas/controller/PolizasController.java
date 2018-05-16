@@ -39,12 +39,6 @@ public class PolizasController {
 		return respuestaBean;
 	}
 
-	// @GetMapping("/polizas")
-	// public List<Poliza> getPolizas() {
-	//
-	// return polizasRepository.findAll();
-	// }
-
 	@PostMapping("/valida")
 	public RespuestaValidaBean validaPoliza(@RequestParam("idPoliza") String idPoliza,
 			@RequestParam("tipoNumeroAsegurado") String tipoNumeroAsegurado, @RequestParam("placa") String placa) {
