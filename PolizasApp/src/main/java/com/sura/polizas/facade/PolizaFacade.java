@@ -28,7 +28,7 @@ public class PolizaFacade implements IPolizaFacade {
 
 		RestTemplate restTemplate = new RestTemplate();
 		if (poliza.getTipoPoliza() == TipoPoliza.COLECTIVO.codigo) {
-			Asegurado asegurado = new Asegurado(tipoDocumento, numeroDocumento, new Long(id).toString());
+			Asegurado asegurado = new Asegurado(tipoDocumento, numeroDocumento, String.valueOf(id));
 			ResponseEntity<RespuestaValidaBean> rpta = restTemplate.postForEntity(
 					"http://172.16.0.123:6666/api/asegurado/valida", asegurado, RespuestaValidaBean.class);
 			RespuestaValidaBean respuesta = rpta.getBody();
