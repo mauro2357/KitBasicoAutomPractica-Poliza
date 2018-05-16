@@ -1,4 +1,4 @@
-// This shows a simple build wrapper example, using the AnsiColor plugin.
+﻿// This shows a simple build wrapper example, using the AnsiColor plugin.
 
 	pipeline {
 		agent any
@@ -80,7 +80,7 @@
 				
 					script{	
 					
-					input "Desea desplegar a pruebas?"
+					
 					
 						checkout([$class: 'GitSCM', 
 						branches: [[name: '*/master']], 
