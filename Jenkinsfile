@@ -1,4 +1,4 @@
-ï»¿// This shows a simple build wrapper example, using the AnsiColor plugin.
+// This shows a simple build wrapper example, using the AnsiColor plugin.
 
 	pipeline {
 		agent any
@@ -13,7 +13,7 @@
 				}
 			}
 
-			stage('Analisis de cÃ³digo') { 
+			stage('Analisis de código') { 
 				steps { 
 					withSonarQubeEnv('SonarQubeLocal') {
 						bat 'anali_code.bat'
@@ -22,7 +22,7 @@
 				}
 			}
 			
-			stage('Verificar calidad tÃ©cnica') { 
+			stage('Verificar calidad técnica') { 
 				steps { 
 					script{					
 					timeout(time: 1, unit: 'HOURS') { // Just in case something goes wrong, pipeline will be killed after a timeout
@@ -44,7 +44,7 @@
 				}
 			}
 
-			stage('Desplegar Integraciï¿½n') {
+			stage('Desplegar Integracion') {
 				steps {
 					bat "deploy-bd-dev.bat"
 					bat "deploy-app.bat"
