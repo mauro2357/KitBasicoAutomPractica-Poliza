@@ -36,4 +36,6 @@ public class PolizaFacadeTestConFake {
 		Poliza poliza= polizaFacade.findById(10);
 		assertFalse("Poliza no encontrada", poliza==null);
 	}
+	
+	
 }
