@@ -23,6 +23,8 @@ public class Poliza {
 	
 	private String financiada;
 	
+	private String zona;
+
 	public Poliza() {
 		super();
 	}
@@ -61,6 +63,13 @@ public class Poliza {
 		this.valorPoliza = valorPoliza;
 	}
 
+	public String getZona() {
+		return zona;
+	}
+
+	public void setZona(String zona) {
+		this.zona = zona;
+	}	
 
 	public String getFinanciada() {
 		return financiada;
@@ -69,33 +78,5 @@ public class Poliza {
 	public void setFinanciada(String financiada) {
 		this.financiada = financiada;
 	}
-
-	
-	//Devuelve boolean si es asegurable
-	public void validaPedido(String idPoliza, String tipoDocumento, String numeroDocumento, String placa) {
-		
-		//Se obtiene la poliza con el idPoliza --> POLIZA
-			//No se encuentra devuelve --> false
-		
-		//Se obtiene el asegurado --> llama REST /api/asegurado/{tipo_numero_doc}  --> ASEGURADO
-			//No se encuentra devuelve --> false
-		
-		//Se obtiene vehiculo --> llama REST /api/vehiculo/{placa} --> VEHICULO
-			//No se encuentra devuelve --> false
-		
-		//if(POLIZA.tipo==COLECTIVA)
-			// se valida ASEGURADO pertenece EMPRESA  --> /api/asegurado/valida
-				//No es valido --> false
-		
-		//else //INDIVIDUAL
-			// se valida VEHICULO zon circulacion  --> /api/vehiculo/valida
-				//No es valido --> false
-		
-		// devuelve --> true
-		
-	}
-	
-	
-
 	
 }

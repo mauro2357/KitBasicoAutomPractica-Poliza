@@ -7,7 +7,6 @@ public class RespuestaBean {
 	private boolean financiado;
 	private BigDecimal valorPoliza;
 
-	
 	public boolean isFinanciado() {
 		return financiado;
 	}
@@ -20,8 +19,5 @@ public class RespuestaBean {
 	public void setValorPoliza(BigDecimal valorPoliza) {
 		this.valorPoliza = valorPoliza;
 	}
-	
-	
-	
 	
 }

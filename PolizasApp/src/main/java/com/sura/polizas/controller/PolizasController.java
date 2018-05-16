@@ -41,11 +41,11 @@ public class PolizasController {
 
 	@PostMapping("/valida")
 	public RespuestaValidaBean validaPoliza(@RequestParam("idPoliza") String idPoliza,
-			@RequestParam("tipoNumeroAsegurado") String tipoNumeroAsegurado, @RequestParam("placa") String placa) {
+			@RequestParam("tipoDocumento") String tipoDocumento,
+			@RequestParam("numeroDocumento") String numeroDocumento,
+			@RequestParam("placa") String placa) {
 
-		RespuestaValidaBean respuestaValidaBean = new RespuestaValidaBean();
-		respuestaValidaBean.setAsegurable(true);
-		respuestaValidaBean.setMensaje("OK");
+		RespuestaValidaBean respuestaValidaBean = iPolizaFacade.validaPedido(new Long(idPoliza), tipoDocumento, numeroDocumento, placa) ;
 		return respuestaValidaBean;
 
 	}

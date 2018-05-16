@@ -48,5 +48,13 @@ public class PolizaFacadeTestConFake {
 		assertTrue("Poliza no encontrada", respuestaBean!=null);
 	}
 	
+	public void validaVehiculoOK() {
+		
+	}
+	
+	
+	public void validaVehiculoNoOK() {
+		
+	}
 	
 }
