@@ -21,15 +21,18 @@ public class Poliza {
 	
 	private BigDecimal valorPoliza;
 	
+	private String financiada;
+	
 	public Poliza() {
 		super();
 	}
 	
-	public Poliza(int tipoPoliza, String empresa, BigDecimal valorPoliza) {
+	public Poliza(int tipoPoliza, String empresa, BigDecimal valorPoliza, String financiada) {
 		super();
 		this.tipoPoliza=tipoPoliza;
 		this.empresa=empresa;
 		this.valorPoliza=valorPoliza;
+		this.financiada=financiada;
 		
 	}
 	
@@ -57,7 +60,13 @@ public class Poliza {
 	public void setValorPoliza(BigDecimal valorPoliza) {
 		this.valorPoliza = valorPoliza;
 	}
-	
-	
+
+	public String getFinanciada() {
+		return financiada;
+	}
+
+	public void setFinanciada(String financiada) {
+		this.financiada = financiada;
+	}
 	
 }
