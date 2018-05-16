@@ -6,6 +6,13 @@
 
 		stages{
 
+
+			stage('Probar unitariamente') { 
+				steps { 
+					bat "test.bat"
+				}
+			}
+
 			stage('Generar desplegable') {
 				steps {
 					powershell 'wget http://localhost:6969/shutdown'
