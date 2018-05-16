@@ -46,6 +46,7 @@
 
 			stage('Desplegar Integraci�n') {
 				steps {
+					bat "deploy-bd-dev.bat"
 					bat "deploy-app.bat"
 				}
 			}
@@ -91,7 +92,7 @@
 			      }
 					bat 'mkdir "PolizasApp/build/libs/config"'
 					bat 'xcopy "KitBasicoAutomPractica-Poliza-Ops/config" "PolizasApp/build/libs/config"'
-					bat "deploy-bd.bat"
+					bat "deploy-bd-pru.bat"
 					bat "deploy-app.bat"
 				}
 			}
